@@ -1,0 +1,36 @@
+<form th:action="@{~/matkul/update}" id="form-input" method="post" th:object="${matkul}">
+    <input type="hidden" name="id" th:field="*{id}">
+    <div class="modal-header bg-warning">
+        <h3 class="modal-title">Edit Matakuliah</h3>
+    </div>
+
+    <div class="modal-body row">
+        <div class="col-md-12 col-lg-12">
+            <div class="form-group">
+                <label for="code">Kode</label>
+                <input id="code" type="text" th:field="*{code}"
+                       th:class="${#fields.hasErrors('code')} ? 'form-control is-invalid': 'form-control'">
+                <span th:if="${#fields.hasErrors('code')}" class="error invalid-feedback" th:errors="*{code}"></span>
+            </div>
+
+            <div class="form-group">
+                    <label for="name">Nama</label>
+                <input id="name" type="text" th:field="*{name}"
+                       th:class="${#fields.hasErrors('name')} ? 'form-control is-invalid': 'form-control'">
+                <span th:if="${#fields.hasErrors('name')}" class="error invalid-feedback" th:errors="*{name}"></span>
+            </div>
+
+                <div class="form-group">
+                    <label for="sks">Sks</label>
+                    <input id="sks" type="text" th:field="*{sks}"
+                           th:class="${#fields.hasErrors('sks')} ? 'form-control is-invalid': 'form-control'">
+                    <span th:if="${#fields.hasErrors('sks')}" class="error invalid-feedback" th:errors="*{sks}"></span>
+                </div>
+
+            <div class="modal-footer justify-content-between">
+                <button type="submit" class="btn btn-success">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</form>

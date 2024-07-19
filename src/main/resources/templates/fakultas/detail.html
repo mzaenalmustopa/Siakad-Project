@@ -1,0 +1,35 @@
+<!-- card mulai -->
+<form th:action="@{~/fakultas/save}" method="post" xmlns:th="http://www.w3.org/1999/xhtml">
+    <input type="hidden" name="id" th:value="${data.id}">
+    <div class="modal-header bg-warning">
+        <h3 class="modal-title">Detail Fakultas</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body row">
+        <div class="col-md-12 col-lg-12">
+            <div class="form-group">
+                <label for="code">Kode</label>
+                <input id="code" type="text" name="code" class="form-control" th:value="${data.code}"
+                       readonly="readonly">
+
+                <div class="form-group">
+                    <label for="name">Nama</label>
+                    <input id="name" type="text" name="name" class="form-control" th:value="${data.name}"
+                           readonly="readonly">
+                </div>
+
+                <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <textarea id="alamat" name="alamat" class="form-control" th:text="${data.alamat}"
+                              readonly="readonly"> </textarea>
+                </div>
+            </div>
+            <div class="modal-footer justify-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</form>

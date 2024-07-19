@@ -1,0 +1,42 @@
+<!-- card mulai -->
+<form th:action="@{~/ruang/save}" method="post" xmlns:th="http://www.w3.org/1999/xhtml">
+    <input type="hidden" name="id" th:value="${data.id}">
+    <div class="modal-header bg-warning">
+        <h3 class="modal-title">Detail Ruang</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body row">
+        <div class="col-md-12 col-lg-12">
+            <div class="form-group">
+                <input type="hidden" name="id" th:value="${data.id}">
+                <label for="code">Kode</label>
+                <input readonly="readonly" type="text" name="code" id="code" th:value="${data.code}"
+                       class="form-control">
+
+                <div class="form-group">
+                    <label for="name">Nama</label>
+                    <input readonly="readonly" type="text" name="name" id="name" th:value="${data.name}"
+                           class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="lantaiKe">Lantai</label>
+                    <input readonly="readonly" type="text" name="lantaiKe" id="lantaiKe" th:value="${data.lantaiKe}"
+                           class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="gedung">Gedung</label>
+                    <input readonly="readonly" type="text" name="gedung" id="gedung" th:value="${data.gedung.name}"
+                           class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer justify-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</form>

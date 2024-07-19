@@ -1,0 +1,40 @@
+<!-- card mulai -->
+<form th:action="@{~/kelasdetail/save}" method="post" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="modal-header bg-warning">
+        <h3 class="modal-title">New Kelas</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body row">
+        <div class="col-md-12 col-lg-12">
+            <div class="form-group">
+                <label>Kelas</label>
+                <select name="kelas.id" class="form-control">
+                    <option value=""></option>
+                    <option th:each="data : ${kelasList}" th:value="${data.id}"
+                            th:text="${data.kode}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Mahasiswa</label>
+                <select name="mahasiswa.id" class="form-control">
+                    <option value=""></option>
+                    <option th:each="data : ${mahasiswaList}" th:value="${data.id}"
+                            th:text="${data.name}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <input id="status" name="status" class="form-control">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer justify-content-between">
+        <button type="submit" class="btn btn-success">Simpan</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+</form>
+

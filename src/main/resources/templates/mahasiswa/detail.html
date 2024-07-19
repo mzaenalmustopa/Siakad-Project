@@ -1,0 +1,62 @@
+<!-- card mulai -->
+<form th:action="@{~/mahasiswa/save}" method="post" xmlns:th="http://www.w3.org/1999/xhtml">
+    <input type="hidden" name="id" th:value="${data.id}">
+    <div class="modal-header bg-warning">
+        <h3 class="modal-title">Detail Mahasiswa</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body row">
+        <div class="col-md-6 col-lg-6">
+            <div class="form-group">
+                <label for="name">Nama</label>
+                <input id="name" type="text" name="name" class="form-control" readonly="readonly"
+                       th:value="${data.name}">
+            </div>
+
+            <div class="form-group">
+                <label for="alamat">Alamat</label>
+                <input id="alamat" type="text" name="alamat" class="form-control" readonly="readonly"
+                       th:value="${data.alamat}">
+            </div>
+
+            <div class="form-group">
+                <label for="jk">Jenis Kelamin</label>
+                <input id="jk" name="jk" class="form-control" readonly="readonly" th:value="${data.jk}">
+                </input>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <div class="form-group">
+                <label for="tmpLahir">Tempat / Tanggal Lahir</label>
+                <div class="input-group mb-3">
+                    <input id="tmpLahir" type="text" name="tmpLahir" class="form-control" placeholder="tempat lahir"
+                           readonly="readonly" th:value="${data.tmpLahir}">
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                    <input id="tglLahir" type="date" name="tglLahir" class="form-control" placeholder="dd-MM-yyyy"
+                           readonly="readonly" th:value="${data.tglLahir}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="agama">Agama</label>
+                <input id="agama" name="agama" class="form-control" readonly="readonly" th:value="${data.agama}">
+                </input>
+            </div>
+
+            <div class="form-group">
+                <label for="jurusanId">Jurusan</label>
+                <input id="jurusanId" name="jurusan.id" class="form-control" readonly="readonly"
+                       th:value="${data.jurusan.name}">
+                </input>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer justify-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+</form>

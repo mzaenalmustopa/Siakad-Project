@@ -1,0 +1,44 @@
+<form th:action="@{~/dosen/save}" method="post" xmlns:th="http://www.w3.org/1999/xhtml">
+    <input type="hidden" name="id" th:value="${data.id}">
+    <div class="modal-header bg-warning">
+        <h3 class="modal-title">Detail Dosen</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body row">
+        <div class="col-md-12 col-lg-12">
+            <div class="form-group">
+                <label for="nip">Nip</label> <br>
+                <input readonly="readonly" type="text" name="nip" id="nip" class="form-control" th:value="${data.nip}">
+
+                <div class="form-group">
+                    <label for="name">Nama</label> <br>
+                    <input readonly="readonly" type="text" name="name" id="name" class="form-control"
+                           th:value="${data.name}">
+                </div>
+
+                <div class="form-group">
+                    <label for="jk">Jenis Kelamin</label> <br>
+                    <input readonly="readonly" type="text" name="jk" id="jk" class="form-control" th:value="${data.jk}">
+                </div>
+
+                <div class="form-group">
+                    <label for="alamat">Alamat</label> <br>
+                    <textarea readonly="readonly" name="alamat" id="alamat" class="form-control"
+                              th:text="${data.alamat}"> </textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="gelar">Gelar</label> <br>
+                    <input readonly="readonly" type="text" name="gelar" id="Gelar" class="form-control"
+                           th:value="${data.gelar}">
+                </div>
+            </div>
+            <div class="modal-footer justify-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</form>
